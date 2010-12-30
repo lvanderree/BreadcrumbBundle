@@ -1,0 +1,15 @@
+{% spaceless %}
+    {% if breadcrumb | length > 1 %}
+        <ul class="breadcrumb">
+        {% for crumb in breadcrumb %}
+            <li>
+            {% if not loop.last %}
+                <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+            {% else %}
+                <h2>{{ crumb.title }}</h2>
+            {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endspaceless %}
